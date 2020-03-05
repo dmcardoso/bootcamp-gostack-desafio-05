@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Loading = styled('div')`
     color: #fff;
@@ -14,6 +14,7 @@ export const Owner = styled('header')`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 1px solid #eee;
 
     a {
         color: #7159c1;
@@ -98,4 +99,38 @@ export const IssueList = styled('ul')`
             }
         }
     }
+`;
+
+export const Types = styled('div')`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 0 0;
+`;
+
+export const TypeIssue = styled('button')`
+    display: flex;
+    padding: 10px 5px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 16px;
+    background: unset;
+    color: #7158c1;
+    ${(props) =>
+        props.selected &&
+        css`
+            border-color: #7159c1;
+        `}
+
+    & + & {
+        margin-left: 10px;
+    }
+`;
+
+export const Pagination = styled('div')`
+    width: 100%;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
 `;

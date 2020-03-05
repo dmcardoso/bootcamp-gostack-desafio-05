@@ -3,7 +3,11 @@ module.exports = {
         browser: true,
         es6: true,
     },
-    extends: ['plugin:react/recommended', 'airbnb', 'prettier/react'],
+    extends: [
+        'airbnb',
+        'prettier',
+        'prettier/react'
+    ],
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -16,38 +20,23 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
     },
-    plugins: ['react', 'prettier'],
+    plugins: [
+        'react',
+        'prettier',
+        'react-hooks'
+    ],
     rules: {
         'prettier/prettier': 'error',
-        'curly': ['error', 'all'],
         'react/jsx-filename-extension': [
             'warn',
-            {
-                'extensions': ['.jsx', '.js'],
-            },
+            { extensions: ['.jsx', '.js'] }
         ],
-        'quotes': [
-            'error',
-            'single',
-            { 'avoidEscape': true, 'allowTemplateLiterals': false }
-        ],
-        'max-len': ['error', {'code': 80, 'ignoreUrls': true}],
         'import/prefer-default-export': 'off',
-        'indent': ['error', 4, { 'SwitchCase': 1 }],
         'no-param-reassign': 'off',
-        'no-unused-vars': ['error', { 'argsIgnorePattern': 'next' }],
-        'arrow-parens': 'off',
-        'implicit-arrow-linebreak': 'off',
-        'operator-linebreak': ['error', 'after'],
-        'comma-dangle': [
-            'error',
-            {
-                'arrays': 'only-multiline',
-                'objects': 'only-multiline',
-                'imports': 'only-multiline',
-                'exports': 'only-multiline',
-                'functions': 'never',
-            },
-        ],
+        'no-console': ['error', {allow: ['tron']}],
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn'
     },
 };
+
+
